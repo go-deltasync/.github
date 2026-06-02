@@ -1,5 +1,7 @@
 # go-deltasync
 
+🌐 **[Website](https://go-deltasync.github.io)** · 📚 **[Documentation](https://go-deltasync.github.io/docs/)**
+
 **Pure-Go, cgo-free building blocks for delta synchronization** — move and store
 only the bytes that actually change between two versions of a file.
 
@@ -25,6 +27,10 @@ as a single static binary **and** an importable Go package, and is held to
 - **100% test coverage** — enforced as a CI gate on every repository.
 - **Reusable** — every tool is both a command and an importable library package.
 
-## Docs
+## Links
 
-Guides and reference live at **https://go-deltasync.github.io**.
+- **Website (landing):** <https://go-deltasync.github.io> — built with Hugo.
+- **Documentation:** <https://go-deltasync.github.io/docs/> — MkDocs Material,
+  versioned with [mike]; source in [go-deltasync/docs](https://github.com/go-deltasync/docs).
+
+[mike]: https://github.com/jimporter/mike
