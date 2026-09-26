@@ -22,6 +22,18 @@ as a single static binary **and** an importable Go package, and is held to
 | [**vcdiff**](https://github.com/go-deltasync/vcdiff) | VCDIFF (RFC 3284) delta encode/decode | xdelta3 |
 | [**bita**](https://github.com/go-deltasync/bita) | differential file synchronization over HTTP (`.cba` archives) | [oll3/bita](https://github.com/oll3/bita) |
 
+## A library the tools share
+
+| Repo | What it is | Interoperates with |
+|------|------------|--------------------|
+| [**chunk**](https://github.com/go-deltasync/chunk) | content-defined chunking: cuts a stream where the bytes say, not where a counter does | [bita](https://github.com/go-deltasync/bita), whose hashes and boundary test these are |
+
+It has no row in the table above, and no command, which is why it is here
+instead: the principle below says every **tool** is both a command and a library,
+and chunk is only the second half. It was bita's chunker, living where nothing
+else could reach it; [`go-crdt`](https://github.com/go-crdt/crdt)'s blob store
+now takes `chunk.Cut` directly.
+
 ## Principles
 
 - **Pure Go, no cgo** — one static cross-platform binary, always buildable from source.
